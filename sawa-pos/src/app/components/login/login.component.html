@@ -1,1 +1,73 @@
-<p>login works!</p>
+<div class="body">
+    <div class="row" >
+        <div class="col-md-7" id="login-background"></div>
+          <div class="col-md-4" id="topContainer">
+             <div id="login-form">
+                  <h3>Welcome, SAWA Market</h3>
+ 
+                  <form #f="ngForm"
+                    (ngSubmit)="onSubmit(f)">
+ 
+                  <div class="form-group">
+                    <label for="loginUsername">Email</label>
+                    <input type="text"
+                      name="email"
+                      ngModel
+                      required
+                      #email="ngModel"
+                      class="form-control"
+                      id="loginUsername"
+                      placeholder="Enter email">
+                  </div>
+ 
+                 <!--email message error-->
+                  <div class="alert alert-danger"
+                       *ngIf="email.touched && email.errors?.required "> 
+                        Email Is required 
+                  </div>
+                  <div class="alert alert-danger"
+                       *ngIf="email.touched && email.errors?.email "> 
+                        Your input doesn't match email format 
+                  </div>
+ 
+                  <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password"
+                      name="password"
+                      ngModel
+                      required
+                      #password="ngModel"
+                      class="form-control"
+                      id="loginPassword"
+                      placeholder="Password">
+                  </div>
+                 
+                  <!--password message error-->
+                  <div class="alert alert-danger" 
+                       *ngIf="password.touched && password.errors?.required "> 
+                        Password Is required 
+                  </div>
+         
+          
+                  <button type="submit"
+                          [disabled]="f.invalid"
+                          class="btn btn-success form-control"
+                          style="margin-top: 20px;">Login
+                  </button>
+   
+                  <div class="form-group form-check">
+                       don't have an account?
+                       <a [routerLink]="['/signup']">Sign Up.</a>
+                  </div>
+               </form>
+ 
+              <div class="alert alert-danger" 
+                   *ngIf="errorMessage">
+                   {{errorMessage}}
+              </div>
+ 
+         </div>      
+       </div>
+    </div>
+ </div>
+ 

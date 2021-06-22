@@ -1,0 +1,28 @@
+#sigup-background{
+    background-image:url('https://i.pinimg.com/564x/ba/d0/76/bad07629aa746244083416f37ebabd47.jpg');
+
+    background-size:cover;
+    height:600px;
+   }
+   #error-message{
+      padding: 0;
+      padding-left: 10px; 
+      height:20;
+   }
+   #signup-ground-panel{
+      background-color: rgb(255, 255, 255);
+      height: 550px;
+   }
+   #signup-box{
+      background-color: rgb(196, 230, 218); 
+      border: 2px;
+      margin:90px 175px;
+      text-align: center;
+      height: 450px;
+      padding-top: 15px;
+      margin-right: 0;
+   }
+   #input-margin{
+      margin: 20px; 
+      text-align: left;
+   }

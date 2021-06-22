@@ -1,1 +1,38 @@
-<p>navbar works!</p>
+<div>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" routerLink="/">
+          <!-- <img src="../assets/img/logo.png" alt="" width="30" height="24" class="d-inline-block align-text-top"> -->
+             SAWA MARKET
+        </a>
+        <button (click)="togglenavbar()" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" [class.show]="isOpen">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" routerLink="/" routerLinkActive="active">Home</a>
+            </li>
+            <li class="nav-item" *ngIf="isUser">
+              <a class="nav-link" routerLink="/Dashbord" routerLinkActive="active">Dashbord</a>
+            </li>
+            <li class="nav-item" *ngIf="isUser">
+              <a class="nav-link" routerLink="/upload" routerLinkActive="active">UploadFile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/download" routerLinkActive="active">Download The App</a>
+            </li>
+          </ul>
+            
+          <div class=" d-flex navbar-right">
+              <button type="submit" class="btn btn-success" style="margin-right: 4px;" *ngIf="!isUser" routerLink="/login">LogIn</button>
+              <button type="submit" class="btn btn-success" style="margin-right: 6px;" *ngIf="!isUser" routerLink="/signup">SignUp</button>
+              <button type="submit" class="btn btn-danger" style="margin-right: 6px;" *ngIf="isUser" (click)="Onlogout()">Logout</button>
+        
+            </div>
+    
+        </div>
+      </div>
+    </nav> 
+  </div>

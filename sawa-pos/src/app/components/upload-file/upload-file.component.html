@@ -1,1 +1,45 @@
-<p>upload-file works!</p>
+   
+ <div class="body">
+    <div class="container-fluid" id="topContainer" >
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3 ">
+         
+           <div id="wrapper" >
+            
+              <form id="formUpload"  method="POST" enctype="multipart/form-data" >
+                
+                <h3 class="marginTop">Custom File Upload </h3>
+                <p class="lead" >Upload Your PDF file TO FireBase Server. </p>
+               
+                <div class="custom-file">
+                  <!-- <img src="assets/img/uploadIcon.png" width="170px" margin-top=0px; alt="cloud-upload-file"  > <br> -->
+                  <img src="https://cdn2.iconfinder.com/data/icons/cloud-computing-storage/48/upload-file-512.png" width="170px" margin-top=0px; alt="cloud-upload-file"  > <br>
+                  
+                  <input type="file" ngModel name="file" class="file-upload" id="inputGroupFile01" (change)="onFileSelected($event)" accept=".pdf"/>
+                </div>
+                
+                <input type="submit" class="btn btn-success btn-lg marginTop" value="Submit" (click)="onSubmit()"/> 
+              </form>
+              
+               <!--error server message-->
+             <div class="alert alert-danger"
+                *ngIf="errorMessage"
+                id="error-message">
+                 {{errorMessage}}
+              </div>
+             <div class="alert alert-success"
+                *ngIf="successMessage"
+                id="error-message">
+                {{successMessage}}
+             </div>
+         
+           </div>
+  
+        </div>
+      </div>
+    </div>
+   </div>
+      
+   
+   
+  

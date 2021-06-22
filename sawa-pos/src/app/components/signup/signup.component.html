@@ -1,1 +1,147 @@
-<p>signup works!</p>
+
+<div class="body">
+    <div class="row">
+      
+       <div class="col-md-6" id="signup-ground-panel">
+         <div id="signup-box"  >
+             <h3>Create New Account</h3>
+         
+             <form #signupForm="ngForm"
+                  (ngSubmit)="OnRegister(signupForm)" >
+ 
+                <div id="input-margin">
+                   <div class="form-group" >
+                      <label for="registerUsername">Username</label>
+                      <input ngModel
+                             name="name"
+                             #name="ngModel"
+                             class="form-control"
+                             placeholder="Username"
+                             type="text"
+                             required/>
+                   </div>
+                   <!--username error message-->
+                   <div class="alert alert-danger"
+                        *ngIf="name.invalid &&
+                                name.touched"
+                         id="error-message">
+                         Username Is required
+                   </div>
+ 
+ 
+                   <div class="form-group">
+                      <label for="registerEmail">Email</label>
+                      <input ngModel
+                             name="email"
+                             #email="ngModel"
+                             class="form-control" 
+                             placeholder="Enter email" 
+                             type="email" 
+                             required/>
+          
+                  </div>
+                  <!--email error message-->
+                  <div class="alert alert-danger"
+                       *ngIf="email.touched && 
+                        email.errors?.required "
+                        id="error-message">
+                         Email Is required      
+                   </div>
+                  <div class="alert alert-danger"
+                       *ngIf="email.touched && 
+                              email.errors?.email"
+                       id="error-message"> 
+                              Your input doesn't match email format 
+                  </div>
+         
+                  <div class="form-group">
+                   <label for="registerPassword">Password</label>
+                   <input ngModel
+                          name="password"
+                          #password="ngModel"
+                          class="form-control"
+                          placeholder="Password"
+                          id="margin-input-felid"
+                          type="password" 
+                          required
+                          minlength="6"/>
+               </div>
+               <!--password error message-->
+               <div class="alert alert-danger"
+                    *ngIf="password.touched && 
+                     password.errors?.required"
+                     id="error-message">
+                     Password Is required 
+                </div>
+                <div class="alert alert-danger" 
+                     *ngIf="confPassword.touched &&
+                            confPassword.errors?.minlength"
+                      id="error-message" >
+                      Password should be 6+ charachters
+                </div>
+           
+ 
+               <div class="form-group">
+                <label for="confirmePassword">Confirme Password</label>
+                <input ngModel
+                       name="confPassword"
+                       #confPassword="ngModel"
+                       class="form-control"
+                       placeholder="Confirme Password"
+                       type="password" 
+                       required/>
+               </div>
+                <!--error confirme password message-->
+                <div class="alert alert-danger" 
+                     id="error-message"
+                      *ngIf="confPassword.touched && 
+                            confPassword.errors?.required "
+                      id="error-message"> 
+                      Password Is required 
+                </div>
+                <div class="alert alert-danger"
+                     style="padding: 0; height:20;"
+                     *ngIf="password.touched &&
+                            confPassword.value !== 
+                            password.value"
+                     id="error-message">
+                     Passwords are not equal 
+                </div>
+                <button class="btn btn-success btn-lg btn-block
+                               form-control" 
+                        [disabled]="signupForm.invalid || confPassword.value
+                                    !== password.value" 
+                        style="margin-top: 15px;" >
+                        Register
+                </button> 
+ 
+               </div>
+             </form>
+             <!--error server message-->
+             <div class="alert alert-danger"
+                  *ngIf="errorMessage"
+                  id="error-message">
+                   {{errorMessage}}
+             </div>
+             <div class="alert alert-success"
+                  *ngIf="successMessage"
+                  id="error-message">
+                  {{successMessage}}
+                  
+             </div>
+         
+          
+         </div>
+       </div>
+      <div class="col-md-6" id="sigup-background"> </div>  
+      
+        
+    </div>
+    
+ </div>
+ 
+ 
+ 
+ 
+ 
+ 

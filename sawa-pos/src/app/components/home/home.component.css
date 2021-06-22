@@ -1,0 +1,40 @@
+
+  #topContainer{
+     /* background-image:url("../../public/assets/img/background01"); */
+    background-image:url('https://illustrators.ru/uploads/illustration/image/953151/main_shopping1.png');
+    height: 600px;
+    width: 100%;
+    background-size: 350mm;
+    margin-left: 100px;
+  }
+
+#topRow{
+    margin-top:100px;
+    text-align: center;
+}
+#topRow h1{ 
+    font-size: 300%;
+}
+.bold {
+   font-weight:bold;
+}
+.marginTop{
+    margin-top:25px;
+}
+.center{
+    text-align: center;
+}
+.title{
+    margin-top: 100px;
+    font-size: 300%;
+}
+#footer{
+    background: #B0D1FB;
+    padding-top: 30px;
+}
+.marginButton{
+    margin-bottom: 30px;
+}
+.appStoreImage{
+    width: 250px;
+}
