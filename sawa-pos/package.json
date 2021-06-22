@@ -1,7 +1,10 @@
 {
   "name": "sawa-pos",
   "version": "0.0.0",
+  "main": "main.js",
+  "license": "MIT",
   "scripts": {
+    "start:electron": "ng build --base-href ./ && electron .",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
